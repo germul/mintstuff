@@ -1,0 +1,51 @@
+Rip a dvd
+----------
+
+first install dvdbackup -----
+
+sudo apt-get install dvdbackup
+
+then to discover the main title execute the following in a terminal
+
+dvdbackup -i /dev/sr0 -I
+
+to extract main title execute the following
+
+dvdbackup -i /dev/sr0 -o ~ -t X   
+
+where X is the number previous command "Title set containing the main feature is (number)", so set -t 1 for one or -t 2 and so on.
+
+This will extract vob files to a folder with the movie name in /home  << this may take some time to complete!!
+
+cd into the created folder or navigate and open terminal here,
+next we need to join the VOB files together using
+
+if title is 1:-
+
+cat VTS_01_1.VOB VTS_01_2.VOB VTS_01_3.VOB VTS_01_4.VOB VTS_01_5.VOB VTS_01_6.VOB VTS_01_7.VOB > title.VOB
+
+if title is 2:-
+
+cat VTS_02_1.VOB VTS_02_2.VOB VTS_02_3.VOB VTS_02_4.VOB VTS_02_5.VOB VTS_02_6.VOB VTS_02_7.VOB > title.VOB
+
+amend for number of VOB files to join
+
+finally encode the resulting file using handbrake
+
+sudo apt-get install handbrake
+if not installed
+
+################################
+
+cat VTS_01_1.VOB VTS_01_2.VOB VTS_01_3.VOB VTS_01_4.VOB VTS_01_5.VOB VTS_01_6.VOB VTS_01_7.VOB
+
+cat VTS_02_1.VOB VTS_02_2.VOB VTS_02_3.VOB VTS_02_4.VOB VTS_02_5.VOB VTS_02_6.VOB VTS_02_7.VOB
+
+cat VTS_03_1.VOB VTS_03_2.VOB VTS_03_3.VOB VTS_03_4.VOB VTS_03_5.VOB VTS_03_6.VOB VTS_03_7.VOB
+
+cat VTS_04_1.VOB VTS_04_2.VOB VTS_04_3.VOB VTS_04_4.VOB VTS_04_5.VOB VTS_04_6.VOB VTS_04_7.VOB
+
+add to end of live    > title.VOB
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Help Files 2017
